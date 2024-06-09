@@ -2,7 +2,6 @@
   "expo": {
     "name": "store-app",
     "slug": "store-app",
-    "scheme": "store-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
