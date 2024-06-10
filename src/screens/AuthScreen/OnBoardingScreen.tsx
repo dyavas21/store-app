@@ -9,6 +9,7 @@ import {
   Image,
 } from "react-native";
 import React from "react";
+import { LoginApi } from "../../api/AuthApi";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -52,7 +53,15 @@ const OnBoardingScreen = () => {
             },
           ]}
         >
-          <Text>Sign in</Text>
+          <Text
+            onPress={async () => {
+              const res = await LoginApi("mor_2314", "83r5^_");
+
+              console.log(res?.status);
+            }}
+          >
+            Sign in
+          </Text>
         </View>
       </View>
     </SafeAreaView>
