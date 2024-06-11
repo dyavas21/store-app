@@ -18,11 +18,13 @@ const OnBoardingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Image */}
-      <Image
-        resizeMode="cover"
-        source={require("../../assets/onboarding1.png")}
-        style={styles.imageContainer}
-      />
+      <View style={{ alignItems: "center" }}>
+        <Image
+          resizeMode="cover"
+          source={require("../../assets/onboarding1.png")}
+          style={styles.imageContainer}
+        />
+      </View>
 
       {/* header */}
       <View style={styles.headerContainer}>
@@ -56,8 +58,8 @@ const OnBoardingScreen = () => {
           <Text
             onPress={async () => {
               const res = await LoginApi("mor_2314", "83r5^_");
-
-              console.log(res?.status);
+              console.log(res.status);
+              console.log(res.data);
             }}
           >
             Sign in
