@@ -7,6 +7,7 @@ import {
   Platform,
   StatusBar,
   Image,
+  Pressable,
 } from "react-native";
 import React from "react";
 import { LoginApi } from "../../api/AuthApi";
@@ -42,10 +43,15 @@ const OnBoardingScreen = () => {
 
       {/* Button */}
       <View style={styles.bottomContainer}>
-        <View style={[styles.buttonContainer, { backgroundColor: "black" }]}>
+        <Pressable
+          style={[styles.buttonContainer, { backgroundColor: "black" }]}
+          onPress={() => {
+            console.log("wdw");
+          }}
+        >
           <Text style={{ color: "white" }}>Register</Text>
-        </View>
-        <View
+        </Pressable>
+        <Pressable
           style={[
             styles.buttonContainer,
             {
@@ -54,17 +60,20 @@ const OnBoardingScreen = () => {
               borderBottomLeftRadius: 0,
             },
           ]}
+          onPress={() => {
+            console.log("masuk");
+          }}
         >
           <Text
-            onPress={async () => {
-              const res = await LoginApi("mor_2314", "83r5^_");
-              console.log(res.status);
-              console.log(res.data);
-            }}
+          // onPress={async () => {
+          //   const res = await LoginApi("mor_2314", "83r5^_");
+          //   console.log(res.status);
+          //   console.log(res.data);
+          // }}
           >
             Sign in
           </Text>
-        </View>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
