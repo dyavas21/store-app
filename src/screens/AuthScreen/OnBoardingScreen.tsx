@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import React from "react";
 import { LoginApi } from "../../api/AuthApi";
+import { potColor, potFont } from "../../layouts/styling";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
@@ -49,7 +50,9 @@ const OnBoardingScreen = () => {
             console.log("wdw");
           }}
         >
-          <Text style={{ color: "white" }}>Register</Text>
+          <Text style={[styles.buttonText, { color: potColor.White }]}>
+            Register
+          </Text>
         </Pressable>
         <Pressable
           style={[
@@ -65,11 +68,12 @@ const OnBoardingScreen = () => {
           }}
         >
           <Text
-          // onPress={async () => {
-          //   const res = await LoginApi("mor_2314", "83r5^_");
-          //   console.log(res.status);
-          //   console.log(res.data);
-          // }}
+            style={styles.buttonText}
+            // onPress={async () => {
+            //   const res = await LoginApi("mor_2314", "83r5^_");
+            //   console.log(res.status);
+            //   console.log(res.data);
+            // }}
           >
             Sign in
           </Text>
@@ -102,11 +106,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "center",
     letterSpacing: 1,
+    fontFamily: potFont.OpenSansBold,
   },
   subHeaderText: {
     fontSize: 15,
     textAlign: "center",
     color: "grey",
+    fontFamily: potFont.OpenSansSemiBold,
   },
   bottomContainer: {
     // justifyContent: "space-between",
@@ -124,6 +130,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
+  },
+  buttonText: {
+    fontFamily: potFont.OpenSansBold,
   },
 });
 
