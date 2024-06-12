@@ -12,11 +12,13 @@ import {
 import React from "react";
 import { LoginApi } from "../../api/AuthApi";
 import { potColor, potFont } from "../../layouts/styling";
+import { useNavigation } from "@react-navigation/native";
 
 const width = Dimensions.get("screen").width;
 const height = Dimensions.get("screen").height;
 
 const OnBoardingScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       {/* Image */}
@@ -47,7 +49,7 @@ const OnBoardingScreen = () => {
         <Pressable
           style={[styles.buttonContainer, { backgroundColor: "black" }]}
           onPress={() => {
-            console.log("wdw");
+            navigation.navigate("RegisterScreen");
           }}
         >
           <Text style={[styles.buttonText, { color: potColor.White }]}>
@@ -64,7 +66,7 @@ const OnBoardingScreen = () => {
             },
           ]}
           onPress={() => {
-            console.log("masuk");
+            navigation.navigate("LoginScreen");
           }}
         >
           <Text
